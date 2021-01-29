@@ -9,14 +9,34 @@ public class Dino : MonoBehaviour
     [SerializeField] PlayerInput playerInput;
     [SerializeField] GameObject cameraBase;
     [Header("Attributes")]
-    [SerializeField] float health;
+    [SerializeField] float healthMax = 100;
+    [SerializeField] float health = 100;
+    [SerializeField] bool Dead = false;
     void Start()
     {
-        egg = GetComponent<Egg>();
+        //egg = GetComponent<Egg>();
         playerInput = GetComponent<PlayerInput>();
     }
     private void Update()
     {
         cameraBase.transform.position = gameObject.transform.transform.position;
+        if (Input.GetKeyDown(KeyCode.Q)) egg.EggNotificationSound(transform.position);
     }
+    #region Health/Damage
+    public void Damage(float _inputDamge)
+    {
+        health -= _inputDamge;
+        if (health >= 0) Death();
+    }
+    public void Heal(float _inputHeal)
+    {
+        health += _inputHeal;
+        if (health > healthMax) health = healthMax;
+    }
+    void Death()
+    {
+        Dead = true;
+    }
+    #endregion
+
 }
