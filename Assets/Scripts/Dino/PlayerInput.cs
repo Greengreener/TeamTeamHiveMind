@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class PlayerInput : MonoBehaviour
 {
-    [SerializeField] float speed;
-    //[SerializeField] Rigidbody rb;
+    public float _speed = 5;
     [SerializeField] CharacterController charCon;
     [SerializeField] float turnSmooth = 0.1f;
     float turnSmoothVel;
@@ -30,7 +29,7 @@ public class PlayerInput : MonoBehaviour
             float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targAngle, ref turnSmoothVel, turnSmooth);
             transform.rotation = Quaternion.Euler(0, targAngle, 0);
             Vector3 moveDir = Quaternion.Euler(0, targAngle, 0) * Vector3.forward;
-            charCon.Move(moveDir.normalized * speed * Time.deltaTime);
+            charCon.Move(moveDir.normalized * _speed * Time.deltaTime);
         }
         #endregion
         #region Interaction

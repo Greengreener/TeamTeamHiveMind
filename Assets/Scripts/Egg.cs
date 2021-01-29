@@ -6,7 +6,6 @@ public class Egg : MonoBehaviour
 {
     [SerializeField] Dino dino;
     [SerializeField] AudioSource eggSounder;
-    [SerializeField] AudioClip eggSound;
     void Start()
     {
         dino = GetComponent<Dino>();
@@ -32,9 +31,6 @@ public class Egg : MonoBehaviour
             print(eggSounder.volume);
             eggSounder.Play();
         }
-        else
-        {
-            return;
-        }
+        else return;
     }
 }
