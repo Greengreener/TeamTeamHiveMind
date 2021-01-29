@@ -6,7 +6,6 @@ public class PowerUpHolder : MonoBehaviour
 {
     [SerializeField] Dino dino;
     [SerializeField] PlayerInput pInput;
-    [SerializeField] Rigidbody rb;
     #region Speed variables
     float speedBase;
     float speedUp;
@@ -21,7 +20,6 @@ public class PowerUpHolder : MonoBehaviour
     {
         dino = GetComponent<Dino>();
         pInput = GetComponent<PlayerInput>();
-        rb = GetComponent<Rigidbody>();
         speedBase = pInput._speed;
         speedUp = speedBase * 1.75f;
     }

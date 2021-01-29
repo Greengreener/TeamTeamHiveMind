@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - SpeedUpPU
+  - DinoPlayer
   layers:
   - Default
   - TransparentFX
