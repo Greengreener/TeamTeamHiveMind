@@ -9,4 +9,12 @@ public class Egg : MonoBehaviour
     {
         dino = GetComponent<Dino>();
     }
+    void Captured()
+    {
+
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+
+    }
 }

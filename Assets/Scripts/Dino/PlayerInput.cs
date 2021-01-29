@@ -10,6 +10,8 @@ public class PlayerInput : MonoBehaviour
     [SerializeField] float turnSmooth = 0.1f;
     float turnSmoothVel;
     [SerializeField] Transform cam;
+
+    [SerializeField] GameObject interactTrigger;
     void Start()
     {
         //rb = GetComponent<Rigidbody>();
@@ -18,6 +20,7 @@ public class PlayerInput : MonoBehaviour
 
     void Update()
     {
+        #region Movement
         float hor = Input.GetAxis("Horizontal");
         float ver = Input.GetAxis("Vertical");
         Vector3 dir = new Vector3(hor, 0, ver).normalized;
@@ -29,5 +32,25 @@ public class PlayerInput : MonoBehaviour
             Vector3 moveDir = Quaternion.Euler(0, targAngle, 0) * Vector3.forward;
             charCon.Move(moveDir.normalized * speed * Time.deltaTime);
         }
+        #endregion
+        #region Interaction
+        float interactInput = Input.GetAxisRaw("Interact");
+        //if (interactInput >= 0.1f) Interact();
+
+        // Temp
+        switch (interactInput)
+        {
+            case 0:
+                interactTrigger.SetActive(false);
+                break;
+            case 1:
+                interactTrigger.SetActive(true);
+                break;
+        }
+        #endregion
+    }
+    void Interact()
+    {
+
     }
 }
