@@ -13,7 +13,7 @@ public class CameraControls : MonoBehaviour
     public RotationalAxis axis = RotationalAxis.MouseX;
     [Range(0, 200)]
     public float sensetivity = 100;
-    public float minY = -60, maxY = 60;
+    public float minY = -60, maxY = 30;
     private float _rotY;
 
     void Start()

@@ -6,6 +6,9 @@ TagManager:
   tags:
   - SpeedUpPU
   - DinoPlayer
+  - SpawnPlayer
+  - SpawnEgg
+  - CameraBase
   layers:
   - Default
   - TransparentFX

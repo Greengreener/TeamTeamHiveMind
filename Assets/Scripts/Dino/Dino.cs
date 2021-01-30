@@ -14,8 +14,9 @@ public class Dino : MonoBehaviour
     [SerializeField] bool Dead = false;
     void Start()
     {
-        //egg = GetComponent<Egg>();
         playerInput = GetComponent<PlayerInput>();
+        cameraBase = GameObject.FindGameObjectWithTag("CameraBase");
+        egg = GameObject.FindObjectOfType<Egg>();
     }
     private void Update()
     {

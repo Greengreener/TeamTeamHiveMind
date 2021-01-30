@@ -15,6 +15,7 @@ public class PlayerInput : MonoBehaviour
     {
         //rb = GetComponent<Rigidbody>();
         charCon = GetComponent<CharacterController>();
+        cam = Camera.main.gameObject.transform;
     }
 
     void Update()
