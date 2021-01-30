@@ -16,7 +16,8 @@ public class PlayerInput : MonoBehaviour
     {
         charCon = GetComponent<CharacterController>();
         rb = GetComponent<Rigidbody>();
-        cam = Camera.main.gameObject.transform;
+        cam = FindObjectOfType<Camera>().transform;
+        //cam = Camera.main.gameObject.transform;
     }
 
     void Update()
