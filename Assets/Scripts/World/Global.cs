@@ -52,14 +52,14 @@ public class Global : MonoBehaviour
     }
     void SetPlayerSpawn()
     {
-        spawnPlayerId = Random.Range(0, spawnPlayerLocation.Length - 1);
+        spawnPlayerId = Random.Range(0, spawnPlayerLocation.Length);
         Instantiate(playerPrefab, spawnPlayerLocation[spawnPlayerId].transform.position, Quaternion.identity);
         Instantiate(cameraPrefab, spawnPlayerLocation[spawnPlayerId].transform.position, Quaternion.identity);
 
     }
     void SetEggSpawn()
     {
-        spawnEggId = Random.Range(0, spawnEggLocation.Length - 1);
+        spawnEggId = Random.Range(0, spawnEggLocation.Length);
         Instantiate(eggPrefab, spawnEggLocation[spawnEggId].transform.position, Quaternion.identity);
     }
     void EndOfTime()
