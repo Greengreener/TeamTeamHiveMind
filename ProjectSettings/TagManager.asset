@@ -9,6 +9,7 @@ TagManager:
   - SpawnPlayer
   - SpawnEgg
   - CameraBase
+  - HealthUpPU
   layers:
   - Default
   - TransparentFX

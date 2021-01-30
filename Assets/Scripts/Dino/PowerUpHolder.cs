@@ -10,12 +10,12 @@ public class PowerUpHolder : MonoBehaviour
     float speedBase;
     float speedUp;
     [SerializeField] bool speedUpBool;
-
     #endregion
     #region Counters
     static float baseCountTime = 15;
     [SerializeField] float speedCounter;
     #endregion
+    float healAmount = 10;
     void Start()
     {
         dino = GetComponent<Dino>();
@@ -52,6 +52,11 @@ public class PowerUpHolder : MonoBehaviour
         {
             speedCounter = baseCountTime;
             speedUpBool = true;
+            Destroy(other.gameObject);
+        }
+        if (other.gameObject.tag == "HealthUpPU")
+        {
+            dino.Heal(healAmount);
             Destroy(other.gameObject);
         }
     }
