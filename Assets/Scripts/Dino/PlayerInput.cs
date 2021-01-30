@@ -13,7 +13,6 @@ public class PlayerInput : MonoBehaviour
     [SerializeField] GameObject interactTrigger;
     void Start()
     {
-        //rb = GetComponent<Rigidbody>();
         charCon = GetComponent<CharacterController>();
         cam = Camera.main.gameObject.transform;
     }
@@ -35,7 +34,7 @@ public class PlayerInput : MonoBehaviour
         #endregion
         #region Interaction
         float interactInput = Input.GetAxisRaw("Interact");
-        //if (interactInput >= 0.1f) Interact();
+
 
         // Temp
         switch (interactInput)

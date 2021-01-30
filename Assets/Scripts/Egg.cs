@@ -5,19 +5,22 @@ using UnityEngine;
 public class Egg : MonoBehaviour
 {
     [SerializeField] Dino dino;
+    [SerializeField] Global g;
     [SerializeField] AudioSource eggSounder;
     void Start()
     {
         dino = GetComponent<Dino>();
+        g = FindObjectOfType<Global>();
         eggSounder = GetComponent<AudioSource>();
     }
     void Captured()
     {
         print("Captured");
+        g.EggCaptured();
     }
     private void OnTriggerEnter(Collider other)
     {
-        Captured();
+        if (other.gameObject.tag == "DinoPlayer") Captured();
     }
     public void EggNotificationSound(Vector3 _playerLocation)
     {
