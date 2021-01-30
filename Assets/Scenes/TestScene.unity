@@ -423,18 +423,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1227728869007292547}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1743570229 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1943972086785098487, guid: 75cf19ac6b969e941a52b2aa55f0e119,
-    type: 3}
-  m_PrefabInstance: {fileID: 1943972087252453314}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ebd97f059d74ddf4d86c8f83e955bf46, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1227728869007292547
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -511,6 +499,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1519422706435437319, guid: 75cf19ac6b969e941a52b2aa55f0e119,
+        type: 3}
+      propertyPath: sceneId
+      value: 1856922610
+      objectReference: {fileID: 0}
     - target: {fileID: 1943972086785098487, guid: 75cf19ac6b969e941a52b2aa55f0e119,
         type: 3}
       propertyPath: egg
@@ -723,7 +716,7 @@ PrefabInstance:
         type: 3}
       propertyPath: dino
       value: 
-      objectReference: {fileID: 1743570229}
+      objectReference: {fileID: 0}
     - target: {fileID: 4745294786626754621, guid: 1df00ef8599564c4097e937965962d46,
         type: 3}
       propertyPath: m_Name

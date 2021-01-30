@@ -7,6 +7,7 @@ public class NetworkPlayerInitializer : NetworkBehaviour
 {
     [SerializeField] GameObject playerMain;
     [SerializeField] GameObject playerCamera;
+    [SerializeField] GameObject cameraController;
     [SerializeField] GameObject face;
     //[SerializeField] GameObject playerCanvas;
     //[SerializeField] CameraLook cameraBody;
@@ -18,6 +19,7 @@ public class NetworkPlayerInitializer : NetworkBehaviour
         // cameraBody.enabled = true;
         playerMain.SetActive(true);
         playerCamera.SetActive(true);
+        cameraController.SetActive(true);
         face.SetActive(true);
         GetComponentInChildren<PlayerInput>().enabled = true;
         GetComponentInChildren<CharacterController>().enabled = true;

@@ -12,9 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Mirror/Lobby.unity
     guid: bb93e6a85889daf4a8357381aa7a9d93
   - enabled: 1
-    path: Assets/Scenes/Multiplayer/MultiPlayerMap1.unity
-    guid: 63ff7ac2fcda7ff4eaafca485d3928aa
-  - enabled: 1
     path: Assets/Scenes/Multiplayer/Online.unity
     guid: 178ef8f233280744bbde2e8a91262a57
+  - enabled: 1
+    path: Assets/Scenes/Multiplayer/MultiplayerMap1.unity
+    guid: 63ff7ac2fcda7ff4eaafca485d3928aa
   m_configObjects: {}

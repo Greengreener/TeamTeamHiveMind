@@ -59,6 +59,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d906f015065a55f4caf086304dc13a14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
 --- !u!1 &8522337278323206750
 GameObject:
   m_ObjectHideFlags: 0
@@ -143,7 +145,8 @@ MonoBehaviour:
   syncMode: 0
   syncInterval: 0.1
   playerMain: {fileID: 7854908660333287985}
-  playerCamera: {fileID: 7928487590468889222}
+  playerCamera: {fileID: 7928487590813431031}
+  cameraController: {fileID: 7928487590468889222}
   face: {fileID: 7854908661279988874}
 --- !u!114 &5472109558361238222
 MonoBehaviour:
@@ -324,6 +327,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7324288676238745384, guid: af4292804a74a524099527ccbe0ada3f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7324288676326474073, guid: af4292804a74a524099527ccbe0ada3f,
         type: 3}
       propertyPath: m_Name
@@ -403,6 +411,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 838440057271921631}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &7928487590813431031 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7324288676238745384, guid: af4292804a74a524099527ccbe0ada3f,
+    type: 3}
+  m_PrefabInstance: {fileID: 838440057271921631}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4843710459493257345
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -435,6 +449,11 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3331094930788354738, guid: 5724bec73ff7fb64c961fa5c1bdb1383,
+        type: 3}
+      propertyPath: cameraBase
+      value: 
+      objectReference: {fileID: 7928487590468889222}
     - target: {fileID: 3331094930788354739, guid: 5724bec73ff7fb64c961fa5c1bdb1383,
         type: 3}
       propertyPath: dino
@@ -504,6 +523,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3331094930788354750, guid: 5724bec73ff7fb64c961fa5c1bdb1383,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 126
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5724bec73ff7fb64c961fa5c1bdb1383, type: 3}

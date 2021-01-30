@@ -10,6 +10,7 @@ public class PlayerInput : MonoBehaviour
     [SerializeField] float turnSmooth = 0.1f;
     float turnSmoothVel;
     [SerializeField] Transform cam;
+    [SerializeField] GameObject cameraBase;
 
     [SerializeField] GameObject interactTrigger;
     void Start()
@@ -52,6 +53,7 @@ public class PlayerInput : MonoBehaviour
                 break;
         }
         #endregion
+        cameraBase.transform.position = gameObject.transform.transform.position;
     }
     void Interact()
     {
