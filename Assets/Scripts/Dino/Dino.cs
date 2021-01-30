@@ -18,7 +18,7 @@ public class Dino : MonoBehaviour
         cameraBase = GameObject.FindGameObjectWithTag("CameraBase");
         egg = GameObject.FindObjectOfType<Egg>();
     }
-    private void Update()
+    private void LateUpdate()
     {
         cameraBase.transform.position = gameObject.transform.transform.position;
         if (Input.GetKeyDown(KeyCode.Q)) egg.EggNotificationSound(transform.position);

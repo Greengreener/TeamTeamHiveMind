@@ -6,6 +6,7 @@ public class PlayerInput : MonoBehaviour
 {
     public float _speed = 5;
     [SerializeField] CharacterController charCon;
+    [SerializeField] Rigidbody rb;
     [SerializeField] float turnSmooth = 0.1f;
     float turnSmoothVel;
     [SerializeField] Transform cam;
@@ -14,6 +15,7 @@ public class PlayerInput : MonoBehaviour
     void Start()
     {
         charCon = GetComponent<CharacterController>();
+        rb = GetComponent<Rigidbody>();
         cam = Camera.main.gameObject.transform;
     }
 
@@ -29,8 +31,10 @@ public class PlayerInput : MonoBehaviour
             float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targAngle, ref turnSmoothVel, turnSmooth);
             transform.rotation = Quaternion.Euler(0, targAngle, 0);
             Vector3 moveDir = Quaternion.Euler(0, targAngle, 0) * Vector3.forward;
-            charCon.Move(moveDir.normalized * _speed * Time.deltaTime);
+            charCon.Move(moveDir * _speed * Time.deltaTime);
         }
+        //Gravity
+        charCon.SimpleMove(new Vector3(0, -1, 0));
         #endregion
         #region Interaction
         float interactInput = Input.GetAxisRaw("Interact");

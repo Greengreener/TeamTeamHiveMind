@@ -272,10 +272,11 @@ MonoBehaviour:
   spawnEggLocation: []
   spawnEggId: 0
   startTime: 360
-  eggTime: 180
+  eggTime: 120
   timeDown: 0
   mins: 
   secs: 
+  displayType: f0
 --- !u!1 &625850038
 GameObject:
   m_ObjectHideFlags: 0
