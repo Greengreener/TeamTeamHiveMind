@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Dino : MonoBehaviour
 {
+    [SerializeField] Global g;
     [Header("ObjectsIDK")]
     [SerializeField] Egg egg;
     [SerializeField] public bool hasEgg;
@@ -15,6 +16,7 @@ public class Dino : MonoBehaviour
     [SerializeField] bool Dead = false;
     void Start()
     {
+        g = FindObjectOfType<Global>();
         playerInput = GetComponent<PlayerInput>();
         cameraBase = GameObject.FindGameObjectWithTag("CameraBase");
         egg = FindObjectOfType<Egg>();
@@ -22,13 +24,13 @@ public class Dino : MonoBehaviour
     private void LateUpdate()
     {
         cameraBase.transform.position = gameObject.transform.transform.position;
-        if (Input.GetKeyDown(KeyCode.Q)) egg.EggNotificationSound(transform.position);
+        if (Input.GetKeyDown(KeyCode.Q) && !hasEgg) egg.EggNotificationSound(transform.position);
+        if (health <= 0) Death();
     }
     #region Health/Damage
     public void Damage(float _inputDamge)
     {
         health -= _inputDamge;
-        if (health >= 0) Death();
     }
     public void Heal(float _inputHeal)
     {
@@ -37,8 +39,8 @@ public class Dino : MonoBehaviour
     }
     void Death()
     {
+        g.EndOfTime();
         Dead = true;
     }
     #endregion
-
 }

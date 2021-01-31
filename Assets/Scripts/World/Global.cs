@@ -79,7 +79,7 @@ public class Global : MonoBehaviour
         eggReturned = true;
         timeDown = 0;
     }
-    void EndOfTime()
+    public void EndOfTime()
     {
         mins = 0.ToString();
         secs = 0.ToString("f0");

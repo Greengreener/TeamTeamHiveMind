@@ -141,6 +141,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dino: {fileID: 0}
+  g: {fileID: 0}
   eggSounder: {fileID: 0}
 --- !u!135 &4745294786626754618
 SphereCollider:
@@ -181,7 +182,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 50da4041a8258a14eab9fe1b2e51f5ff, type: 3}
+  m_audioClip: {fileID: 8300000, guid: ae0f815fc84ddd4429107f37565c78a0, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -194,7 +195,7 @@ AudioSource:
   MinDistance: 1
   MaxDistance: 250
   Pan2D: 0
-  rolloffMode: 1
+  rolloffMode: 0
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
