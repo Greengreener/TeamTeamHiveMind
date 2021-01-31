@@ -7,6 +7,7 @@ public class Egg : MonoBehaviour
     [SerializeField] Dino dino;
     [SerializeField] Global g;
     [SerializeField] AudioSource eggSounder;
+    [SerializeField] GameObject eggMesh;
     void Start()
     {
         dino = FindObjectOfType<Dino>();
@@ -18,6 +19,8 @@ public class Egg : MonoBehaviour
         print("Captured");
         g.EggCaptured();
         dino.hasEgg = true;
+        eggMesh.SetActive(false);
+        gameObject.GetComponent<Collider>().enabled = false;
     }
     private void OnTriggerEnter(Collider other)
     {

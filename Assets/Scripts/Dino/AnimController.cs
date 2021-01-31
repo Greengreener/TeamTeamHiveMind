@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class AnimController : MonoBehaviour
 {
-    [SerializeField] Animator animator;
-    [SerializeField] CharacterController charCon;
+    [SerializeField] Animator animator = null;
     [SerializeField] bool isRunning = false;
     [SerializeField] public bool isMovable = true;
 

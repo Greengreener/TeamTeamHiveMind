@@ -10,6 +10,7 @@ public class Dino : MonoBehaviour
     [SerializeField] public bool hasEgg;
     [SerializeField] PlayerInput playerInput;
     [SerializeField] GameObject cameraBase;
+    [SerializeField] HUD playerHUD;
     [Header("Attributes")]
     [SerializeField] float healthMax = 100;
     [SerializeField] float health = 100;
@@ -20,12 +21,19 @@ public class Dino : MonoBehaviour
         playerInput = GetComponent<PlayerInput>();
         cameraBase = GameObject.FindGameObjectWithTag("CameraBase");
         egg = FindObjectOfType<Egg>();
+        playerHUD = FindObjectOfType<HUD>();
     }
     private void LateUpdate()
     {
         cameraBase.transform.position = gameObject.transform.transform.position;
         if (Input.GetKeyDown(KeyCode.Q) && !hasEgg) egg.EggNotificationSound(transform.position);
-        if (health <= 0) Death();
+
+        if (health > 0) playerHUD.PlayerHealth.text = health.ToString("f0");
+        if (health <= 0)
+        {
+            playerHUD.PlayerHealth.text = "0";
+            Death();
+        }
     }
     #region Health/Damage
     public void Damage(float _inputDamge)

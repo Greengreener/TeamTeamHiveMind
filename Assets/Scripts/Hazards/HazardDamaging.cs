@@ -19,6 +19,7 @@ public class HazardDamaging : MonoBehaviour
     // }
     private void OnTriggerStay(Collider Stay)
     {
+        dino = FindObjectOfType<Dino>();
         if (Stay.gameObject.tag == "DinoPlayer")
         {
             dino.Damage(damage * 0.75f);

@@ -11,10 +11,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Story.unity
     guid: df4842df0da517c49891f99b2b615620
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/SpawningTest.unity
     guid: e6e9236e80667c14281a7e7b2be38c7e
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Terrain.unity
     guid: d5b4a2f81cdea134b9d9d948750561f8
   m_configObjects: {}
