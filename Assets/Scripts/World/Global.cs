@@ -26,9 +26,12 @@ public class Global : MonoBehaviour
     [Header("Win")]
     [SerializeField] GameObject player;
     [SerializeField] GameObject nest;
+    [SerializeField] GameObject camBase;
     [SerializeField] AnimController animController;
+    [SerializeField] CameraControls[] camCon = new CameraControls[2];
     [SerializeField] Collider winTrigger;
     [SerializeField] bool eggReturned;
+    [SerializeField] bool eggSacrificed;
     void Start()
     {
 
@@ -66,7 +69,9 @@ public class Global : MonoBehaviour
         Instantiate(nestPrefab, spawnPlayerLocation[spawnPlayerId].transform.position + new Vector3(0, -0.5f, 0), Quaternion.identity);
         player = GameObject.FindGameObjectWithTag("DinoPlayer");
         nest = GameObject.FindGameObjectWithTag("Nest");
+        camBase = GameObject.FindGameObjectWithTag("CameraBase");
         animController = FindObjectOfType<AnimController>();
+        camCon = FindObjectsOfType<CameraControls>();
         winTrigger = nest.GetComponent<Collider>();
     }
     void SetEggSpawn()
@@ -79,21 +84,39 @@ public class Global : MonoBehaviour
         eggReturned = true;
         timeDown = 0;
     }
+    public void Sacrifice()
+    {
+        eggSacrificed = true;
+        timeDown = 0;
+    }
     public void EndOfTime()
     {
         mins = 0.ToString();
         secs = 0.ToString("f0");
         print("EndOfTime");
-        switch (eggReturned)
+        if (eggSacrificed)
         {
-            case false:
-                playerHUD.failScreen.SetActive(true);
-                break;
-            case true:
-                playerHUD.winScreen.SetActive(true);
-                break;
+            playerHUD.sacrificeScreen.SetActive(true);
+        }
+        else
+        {
+            switch (eggReturned)
+            {
+                case false:
+                    playerHUD.failScreen.SetActive(true);
+                    break;
+                case true:
+                    playerHUD.winScreen.SetActive(true);
+                    break;
+            }
         }
         player.GetComponent<PlayerInput>().enabled = false;
         animController.isMovable = false;
+        camCon[0].enabled = false;
+        camCon[1].enabled = false;
+        playerHUD.menuHolder.SetActive(true);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        camBase.transform.Rotate(0, 0.5f, 0);
     }
 }

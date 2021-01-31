@@ -8,4 +8,6 @@ public class HUD : MonoBehaviour
     [SerializeField] public Text timerText;
     [SerializeField] public GameObject winScreen;
     [SerializeField] public GameObject failScreen;
+    [SerializeField] public GameObject sacrificeScreen;
+    [SerializeField] public GameObject menuHolder;
 }
