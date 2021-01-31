@@ -6,6 +6,7 @@ public class PowerUpHolder : MonoBehaviour
 {
     [SerializeField] Dino dino;
     [SerializeField] PlayerInput pInput;
+    [SerializeField] AnimController animController;
     #region Speed variables
     float speedBase;
     float speedUp;
@@ -16,12 +17,16 @@ public class PowerUpHolder : MonoBehaviour
     [SerializeField] float speedCounter;
     #endregion
     float healAmount = 10;
+
+
     void Start()
     {
         dino = GetComponent<Dino>();
         pInput = GetComponent<PlayerInput>();
+        animController = GetComponent<AnimController>();
         speedBase = pInput._speed;
         speedUp = speedBase * 1.75f;
+
     }
     void FixedUpdate()
     {
@@ -30,9 +35,11 @@ public class PowerUpHolder : MonoBehaviour
             case true:
                 pInput._speed = speedUp;
                 CountDown("SpeedUp");
+                animController.IsRunning(speedUpBool);
                 break;
             case false:
                 pInput._speed = speedBase;
+                animController.IsRunning(speedUpBool);
                 break;
         }
     }
@@ -60,4 +67,5 @@ public class PowerUpHolder : MonoBehaviour
             Destroy(other.gameObject);
         }
     }
+
 }

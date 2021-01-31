@@ -10,6 +10,7 @@ TagManager:
   - SpawnEgg
   - CameraBase
   - HealthUpPU
+  - Nest
   layers:
   - Default
   - TransparentFX

@@ -6,6 +6,7 @@ public class Dino : MonoBehaviour
 {
     [Header("ObjectsIDK")]
     [SerializeField] Egg egg;
+    [SerializeField] public bool hasEgg;
     [SerializeField] PlayerInput playerInput;
     [SerializeField] GameObject cameraBase;
     [Header("Attributes")]
@@ -16,7 +17,7 @@ public class Dino : MonoBehaviour
     {
         playerInput = GetComponent<PlayerInput>();
         cameraBase = GameObject.FindGameObjectWithTag("CameraBase");
-        egg = GameObject.FindObjectOfType<Egg>();
+        egg = FindObjectOfType<Egg>();
     }
     private void LateUpdate()
     {

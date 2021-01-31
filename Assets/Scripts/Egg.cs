@@ -9,7 +9,7 @@ public class Egg : MonoBehaviour
     [SerializeField] AudioSource eggSounder;
     void Start()
     {
-        dino = GetComponent<Dino>();
+        dino = FindObjectOfType<Dino>();
         g = FindObjectOfType<Global>();
         eggSounder = GetComponent<AudioSource>();
     }
@@ -17,6 +17,7 @@ public class Egg : MonoBehaviour
     {
         print("Captured");
         g.EggCaptured();
+        dino.hasEgg = true;
     }
     private void OnTriggerEnter(Collider other)
     {

@@ -265,6 +265,8 @@ MonoBehaviour:
     type: 3}
   cameraPrefab: {fileID: 7324288676326474073, guid: af4292804a74a524099527ccbe0ada3f,
     type: 3}
+  nestPrefab: {fileID: 2747550258240297592, guid: 3816244c0e8bc2f4291f9d08fa739657,
+    type: 3}
   eggPrefab: {fileID: 4745294786626754621, guid: 1df00ef8599564c4097e937965962d46,
     type: 3}
   spawnPlayerLocation: []
@@ -277,6 +279,9 @@ MonoBehaviour:
   mins: 
   secs: 
   displayType: f0
+  nest: {fileID: 0}
+  winTrigger: {fileID: 0}
+  eggReturned: 0
 --- !u!1 &625850038
 GameObject:
   m_ObjectHideFlags: 0
@@ -424,7 +429,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1186545098}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.5, z: 0}
+  m_LocalPosition: {x: 0, y: -0.25, z: 0}
   m_LocalScale: {x: 25, y: 0.5, z: 25}
   m_Children: []
   m_Father: {fileID: 0}
