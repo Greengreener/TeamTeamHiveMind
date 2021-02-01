@@ -144,6 +144,7 @@ MonoBehaviour:
   dino: {fileID: 0}
   g: {fileID: 0}
   eggSounder: {fileID: 0}
+  volumeControl: {fileID: 24100000, guid: 413e6ee45199b224d982dced6662c898, type: 2}
   eggMesh: {fileID: 4745294785688359395}
 --- !u!54 &4745294786626754617
 Rigidbody:
@@ -170,7 +171,8 @@ AudioSource:
   m_GameObject: {fileID: 4745294786626754621}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 413e6ee45199b224d982dced6662c898,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: ae0f815fc84ddd4429107f37565c78a0, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -182,7 +184,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 250
+  MaxDistance: 100
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0

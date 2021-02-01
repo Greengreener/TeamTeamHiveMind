@@ -3,7 +3,12 @@ guid: 74eafb4da53809e479cb11676570599a
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - dino: {instanceID: 0}
+  - g: {instanceID: 0}
+  - eggSounder: {instanceID: 0}
+  - volumeControl: {fileID: 24100000, guid: f44c8de729477f94d83e9fe943932c71, type: 2}
+  - eggMesh: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

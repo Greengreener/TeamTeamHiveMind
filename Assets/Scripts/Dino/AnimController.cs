@@ -8,7 +8,7 @@ public class AnimController : MonoBehaviour
     [SerializeField] bool isRunning = false;
     [SerializeField] public bool isMovable = true;
 
-    void Start()
+    void Awake()
     {
         animator = GetComponentInChildren<Animator>();
     }
