@@ -602,6 +602,11 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 253421189}
+    - target: {fileID: 3331094930788354739, guid: 5724bec73ff7fb64c961fa5c1bdb1383,
+        type: 3}
+      propertyPath: dino
+      value: 
+      objectReference: {fileID: 1743570229}
     - target: {fileID: 3331094930788354748, guid: 5724bec73ff7fb64c961fa5c1bdb1383,
         type: 3}
       propertyPath: m_LocalPosition.x

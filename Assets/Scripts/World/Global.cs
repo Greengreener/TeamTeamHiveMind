@@ -32,6 +32,8 @@ public class Global : MonoBehaviour
     [SerializeField] Collider winTrigger;
     [SerializeField] bool eggReturned;
     [SerializeField] bool eggSacrificed;
+    [SerializeField] bool endOfTime = true;
+    [SerializeField] bool endOfGame = false;
     void Start()
     {
 
@@ -44,15 +46,26 @@ public class Global : MonoBehaviour
     }
     void FixedUpdate()
     {
-        timeDown -= Time.deltaTime;
-        if (timeDown > 0) TimerDown();
-        else EndOfTime();
+        if (timeDown <= 0) TimerFinished();
+        if (!endOfGame) TimerDown();
+        if (endOfGame)
+        {
+            if (endOfTime) EndOfTime();
+            camBase.transform.position = player.transform.position;
+            camBase.transform.Rotate(0, 0.5f, 0);
+        }
         playerHUD.timerText.text = mins + " : " + secs;
     }
     void TimerDown()
     {
+        timeDown -= Time.deltaTime;
         mins = ((int)timeDown / 60).ToString();
         secs = (timeDown % 60).ToString(displayType);
+    }
+    void TimerFinished()
+    {
+        mins = 0.ToString();
+        secs = 0.ToString("f0");
     }
     public void EggCaptured()
     {
@@ -82,18 +95,21 @@ public class Global : MonoBehaviour
     public void ReturnedEgg()
     {
         eggReturned = true;
-        timeDown = 0;
+        endOfGame = true;
+
     }
     public void Sacrifice()
     {
         eggSacrificed = true;
-        timeDown = 0;
+        endOfGame = true;
+
     }
     public void EndOfTime()
     {
-        mins = 0.ToString();
-        secs = 0.ToString("f0");
-        print("EndOfTime");
+        endOfGame = true;
+        //mins = 0.ToString();
+        //secs = 0.ToString("f0");
+        //print("EndOfTime");
         if (eggSacrificed)
         {
             playerHUD.sacrificeScreen.SetActive(true);
@@ -117,6 +133,6 @@ public class Global : MonoBehaviour
         playerHUD.menuHolder.SetActive(true);
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
-        camBase.transform.Rotate(0, 0.5f, 0);
+        endOfTime = false;
     }
 }
