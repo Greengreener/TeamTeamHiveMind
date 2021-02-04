@@ -46,7 +46,7 @@ public class Global : MonoBehaviour
     }
     void FixedUpdate()
     {
-        if (timeDown <= 0) TimerFinished();
+        if (timeDown < 0) TimerFinished();
         if (!endOfGame) TimerDown();
         if (endOfGame)
         {
@@ -66,6 +66,7 @@ public class Global : MonoBehaviour
     {
         mins = 0.ToString();
         secs = 0.ToString("f0");
+        endOfGame = true;
     }
     public void EggCaptured()
     {
